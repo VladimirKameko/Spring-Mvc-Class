@@ -1,6 +1,6 @@
 <jsp:include page="header.jsp"/>
-Home page
 
-Hello from Spring!!!
+
+<h1>Hello from Spring!!!</h1>
 
 <jsp:include page="footer.jsp"/>
