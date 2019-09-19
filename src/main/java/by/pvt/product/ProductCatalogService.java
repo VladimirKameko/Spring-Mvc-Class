@@ -24,9 +24,11 @@ public class ProductCatalogService {
     }
 
 
+    public ProductItem getProductItem(Long id) {
+        return repository.findProductById(id);
+    }
 
-
-
-
-
+    public void saveNewProduct(ProductItem productItem) {
+        repository.save(productItem);
+    }
 }

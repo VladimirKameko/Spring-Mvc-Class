@@ -12,6 +12,8 @@ public class ProductItem implements Serializable {
 
     private Double price;
 
+    private byte[] picture;
+
     public ProductItem() {
     }
 
@@ -54,6 +56,14 @@ public class ProductItem implements Serializable {
         this.price = price;
     }
 
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -75,4 +85,6 @@ public class ProductItem implements Serializable {
         result = 31 * result + (price != null ? price.hashCode() : 0);
         return result;
     }
+
+
 }
