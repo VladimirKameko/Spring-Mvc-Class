@@ -1,9 +1,25 @@
-package by.pvt.product;
+package by.pvt.pojo;
 
 
+import lombok.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.io.Serializable;
+import java.util.Date;
 
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class ProductItem implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -11,10 +27,14 @@ public class ProductItem implements Serializable {
     private boolean isTopProduct;
 
     private Double price;
+    private Date updateDate;
 
+    @Column
+    @Lob
     private byte[] picture;
 
-    public ProductItem() {
+
+  /*  public ProductItem() {
     }
 
     public ProductItem(Long id, String name, boolean isTopProduct, Double price) {
@@ -86,5 +106,13 @@ public class ProductItem implements Serializable {
         return result;
     }
 
-
+    @Override
+    public String toString() {
+        return "ProductItem{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", isTopProduct=" + isTopProduct +
+                ", price=" + price +
+                '}';
+    }*/
 }

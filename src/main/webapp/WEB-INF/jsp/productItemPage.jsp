@@ -3,7 +3,7 @@
 <h1>${item.name}</h1>
 
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="${pageContext.request.contextPath}/product/item/${item.id}/image" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${item.price}</h5>
     <p class="card-text">Product S/N ${item.id}</p>

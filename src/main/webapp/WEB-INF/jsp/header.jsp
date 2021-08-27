@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -20,29 +22,39 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="${pageContext.request.contextPath}/home/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="catalog">Product Catalog</a>
+          <a class="nav-link" href="${pageContext.request.contextPath}/catalog/">Product Catalog</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="${pageContext.request.contextPath}/navbarDropdown/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             My account
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="cart">Cart</a>
-            <a class="dropdown-item" href="orders">Orders</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/cart">Cart</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/orders">Orders</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="help">Help</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/help">Help</a>
           </div>
         </li>
+      <sec:authorize access="!isAuthenticated()">
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link " href="${pageContext.request.contextPath}/register">Register</a>
         </li>
+         <li class="nav-item">
+                  <a class="nav-link " href="${pageContext.request.contextPath}/login">Login</a>
+         </li>
+       </sec:authorize>
+       <sec:authorize access="isAuthenticated()">
+          <li class="nav-item">
+                           <a class="nav-link " href="${pageContext.request.contextPath}/logout">Logout</a>
+           </li>
+        </sec:authorize>
       </ul>
-      <form class="form-inline my-2 my-lg-0" action="search">
+      <form class="form-inline my-2 my-lg-0"   action="${pageContext.request.contextPath}/search">
         <input name= "searchStr" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline-success my-2 my-sm-0"    type="submit">Search</button>
       </form>
     </div>
   </nav>

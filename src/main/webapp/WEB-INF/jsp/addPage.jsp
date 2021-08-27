@@ -1,9 +1,11 @@
+<%@ taglib  prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="header.jsp"/>
+
 
 
 <h1>Add product page</h1>
 
-<form action="add/product" method="POST" enctype="multipart/form-data">
+<form action="${pageContext.request.contextPath}/add/product" method="POST" enctype="multipart/form-data">
   <div class="form-group">
     <label for="exampleInputEmail1">Product Name</label>
     <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
@@ -13,7 +15,7 @@
     <input type="number" name="price" class="form-control" id="exampleInputPassword1" placeholder="Enter price">
   </div>
   <div class="form-group form-check">
-    <input type="checkbox" name="isTopProduct" class="form-check-input" id="exampleCheck1">
+    <input type="checkbox" name="isTopProduct"  class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">This is top product</label>
   </div>
    <div class="form-group">
@@ -22,7 +24,9 @@
     </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+<c:forEach var="errorе" items="${errors}">
+<h2 color="red">${error.defaultMessage}</h2>
+</c:forEach>
 
 
 <jsp:include page="footer.jsp"/>
