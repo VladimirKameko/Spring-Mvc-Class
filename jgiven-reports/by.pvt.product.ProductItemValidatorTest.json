@@ -1,0 +1,101 @@
+{
+  "className": "by.pvt.product.ProductItemValidatorTest",
+  "name": "Product Item Validator",
+  "scenarios": [
+    {
+      "className": "by.pvt.product.ProductItemValidatorTest",
+      "testMethodName": "supports",
+      "description": "Supports",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 122151700
+        }
+      ],
+      "durationInNanos": 122151700,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "by.pvt.product.ProductItemValidatorTest",
+      "testMethodName": "validate",
+      "description": "Validate",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "new product item",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "new product item"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 6937300
+            },
+            {
+              "name": "validate",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "validate"
+                },
+                {
+                  "value": "by.pvt.product.ProductItemValidator@207ea13",
+                  "argumentInfo": {
+                    "argumentName": "validator",
+                    "formattedValue": "by.pvt.product.ProductItemValidator@207ea13"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 51703700
+            },
+            {
+              "name": "no errors",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "no errors"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 1061000
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 75919100
+        }
+      ],
+      "durationInNanos": 75919100,
+      "executionStatus": "SUCCESS"
+    }
+  ],
+  "tagMap": {}
+}
